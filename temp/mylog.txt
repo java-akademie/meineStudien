@@ -1,0 +1,8 @@
+2018-05-04 09:09:38,091 INFO  {App - eine Information   } [ch.jmildner.message.Logging] 
+2018-05-04 09:09:38,091 FATAL {App - ein fataler Fehler } [ch.jmildner.message.Logging] 
+2018-05-04 09:09:38,091 ERROR {App - eine Errormeldung  } [ch.jmildner.message.Logging] 
+2018-05-04 09:09:38,091 WARN  {App - eine Warnmeldung   } [ch.jmildner.message.Logging] 
+2018-05-04 09:10:28,690 INFO  {App - eine Information   } [ch.jmildner.logging.Logging] 
+2018-05-04 09:10:28,690 FATAL {App - ein fataler Fehler } [ch.jmildner.logging.Logging] 
+2018-05-04 09:10:28,690 ERROR {App - eine Errormeldung  } [ch.jmildner.logging.Logging] 
+2018-05-04 09:10:28,690 WARN  {App - eine Warnmeldung   } [ch.jmildner.logging.Logging] 

@@ -1,0 +1,60 @@
+<project name="halloWelt" default="help" basedir=".">
+
+	<property name="src.dir" value="." />
+	<property name="bin.dir" value="./bin" />
+
+	<target name="clean">
+		<echo message="clean ${bin.dir}" />
+		<delete dir="${bin.dir}" />
+	</target>
+
+
+	<target name="init" depends="clean">
+		<mkdir dir="${bin.dir}" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" />
+	</target>
+		
+	<target name="run" depends="compile">
+		<java classname="ch.jmildner.antSeminar.HalloWelt">
+			<arg value="keines" />
+			<arg value="nochmal keines" />
+			<classpath>
+				<!-- jars -->
+				<pathelement location="${basedir}" />
+				<!-- Klassen -->
+				<pathelement path="${bin.dir}" />
+			</classpath>
+		</java>
+	</target>
+		
+	<target name="help">
+		<echo>
+            folgende Tasks sind vorhanden:
+
+            1) uebersetzen des Java HelloWorld
+                  ant compile
+            2) starten des Java HelloWorld
+                  ant run
+            3) diese Ausgabe : "help/default" Target
+                  ant help oder ant 
+            Die folgenden Tasks werden von den andern aus
+            aufgerufen.
+            4) clean : Target zum Loeschen der Class Dateien
+                  ant clean
+            5) init : Target zum Anlegen des Class Dateien Dirs
+				  ant init
+      	</echo>
+
+
+		<echo message="und so weiter..." />
+		<echo message="${basedir}" />
+		<echo message="${bin.dir}" />
+
+	</target>
+
+
+
+</project>

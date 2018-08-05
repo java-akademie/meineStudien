@@ -1,0 +1,61 @@
+Wie funktioniert ein Treiber? z.B. ein Datenbanktreiber?
+
+Es gibt ein Treibeinterface, das alle moegliche Methoden beinhaltet
+
+  public interface Treiber
+  {
+    int tuWas();
+  }
+
+
+Es gibt für jede Art von Datenbank eine Treiberklasse.
+Die Treiberklasse registriert sich wenn sie geladen wird beim TreiberManager.
+
+  public class Treiber1 			// oder Treiber2
+  				implements Treiber 
+  {
+    private static int x = 1111;
+    static 
+    {
+      System.out.println("static initialisierer TreiberX.....");
+      TreiberManager.registerTreiber(new TreiberX());
+    }
+    public int tuWas()
+    {
+      return x;
+    }
+  }
+
+
+Das Programm, das den Treiber benötigt, muss diesen Treiber laden
+und kann anschliessend ueber den TreiberManager auf die diversen statischen
+Methoden des Treibers zugreifen
+
+  public class TestTreiber
+  {
+    public static void main(String[] args) throws ClassNotFoundException
+    {
+      Class.forName("ch.jmildner.syst.treiber.TreiberX");
+      TreiberManager.tuWas();
+    }
+  }
+
+
+Der TreiberManager sieht etwa so aus:
+
+  public class TreiberManager
+  {
+    public static Treiber treiber;	
+	private TreiberManager()
+	{
+	}	
+    public static void registerTreiber(Treiber treiber)
+    {
+      TreiberManager.treiber = treiber;
+      System.out.println("treiberManager: registerTreiber....");
+    }
+    public static void tuWas()
+    {
+      System.out.println("show: " + treiber.tuWas() + " ... " + treiber);
+    }
+  }

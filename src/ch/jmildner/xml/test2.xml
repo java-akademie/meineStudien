@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- kommentar -->
+<daten>
+	<personen>
+		<person>
+			<vorname>johann</vorname>
+			<nachname>berger</nachname>
+			<adresse>basel</adresse>
+		</person>
+		<person>
+			<vorname>fritz</vorname>
+			<nachname>gruber</nachname>
+			<adresse>basel</adresse>
+		</person>
+	</personen>
+	<personen>
+		<person>
+			<vorname>johann</vorname>
+			<nachname>berger</nachname>
+			<adresse>basel</adresse>
+		</person>
+		<person>
+			<vorname>fritz</vorname>
+			<nachname>gruber</nachname>
+			<adresse>basel</adresse>
+		</person>
+	</personen>
+</daten>	
